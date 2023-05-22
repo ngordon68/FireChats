@@ -9,6 +9,7 @@ import UIKit
 import Messages
 import Lottie
 import SwiftUI
+import AVKit
 
 class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     
@@ -27,6 +28,27 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     @Published var hotTapped = false
     @Published var coldTapped = false
     @Published var didVote = true
+    
+    var player: AVAudioPlayer?
+    
+    enum SoundOption: String {
+        case fire
+        case snow
+        case random
+    }
+    
+    func playSound(sound:SoundOption) {
+        
+        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }
+        
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch let error {
+            print("error \(error)")
+        }
+    }
 
     //Cam section: for functions. put all functions here
     @objc func randomFireSideChat() {
