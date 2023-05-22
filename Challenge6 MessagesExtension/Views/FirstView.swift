@@ -40,6 +40,7 @@ struct FirstView: View {
                                 
                                 Button {
                                     vm.randomFireSideChat()
+                                    vm.playSound(sound: .random)
                                     
                                 } label: {
                                     Image(systemName: "arrow.clockwise.circle")

@@ -39,7 +39,7 @@ struct SecondView: View {
                     .frame(width: 350, height: 300)
                     .cornerRadius(20)
                     .foregroundColor(vm.didVote ? .orange : vm.coldTapped ? .blue: .red)
-                    .animation(Animation.easeIn(duration: 1.0), value: vm.coldTapped)
+                    .animation(Animation.easeIn(duration: 0.5), value: vm.coldTapped)
                     .overlay (
                         
                         ZStack {
@@ -57,6 +57,7 @@ struct SecondView: View {
                                     
                                     Button {
                                         vm.startFire()
+                                        vm.playSound(sound: .fire)
                                     } label: {
                                         Text("🔥")
                                             .font(.system(size: 50))
@@ -73,6 +74,7 @@ struct SecondView: View {
                                     
                                     Button {
                                         vm.startCold()
+                                        vm.playSound(sound: .snow)
                                     } label: {
                                         
                                         Text("❄️")

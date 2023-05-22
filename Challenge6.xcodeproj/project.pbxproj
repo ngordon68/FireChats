@@ -23,6 +23,9 @@
 		8E336E062A115A4700A053F7 /* SnowEffect.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E336E052A115A4700A053F7 /* SnowEffect.json */; };
 		8E336E082A115A5600A053F7 /* Snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E336E072A115A5600A053F7 /* Snow.json */; };
 		8E739FF72A095D0C00044791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E739FF62A095D0C00044791 /* Assets.xcassets */; };
+		8E766FAA2A1C33B600CBFA75 /* snow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8E766FA82A1C33B600CBFA75 /* snow.mp3 */; };
+		8E766FAB2A1C33B600CBFA75 /* fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8E766FA92A1C33B600CBFA75 /* fire.mp3 */; };
+		8E766FAD2A1C34D700CBFA75 /* random.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8E766FAC2A1C34D700CBFA75 /* random.mp3 */; };
 		8EA9040F2A0A681C0065FE4F /* RootViewSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9040E2A0A681C0065FE4F /* RootViewSetUp.swift */; };
 		8EA904192A0E77DA0065FE4F /* SendOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA904182A0E77DA0065FE4F /* SendOutView.swift */; };
 		8EA9041C2A0E806F0065FE4F /* ConvertButtonToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9041B2A0E806F0065FE4F /* ConvertButtonToSwiftUI.swift */; };
@@ -72,6 +75,9 @@
 		8E336E052A115A4700A053F7 /* SnowEffect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SnowEffect.json; sourceTree = "<group>"; };
 		8E336E072A115A5600A053F7 /* Snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Snow.json; sourceTree = "<group>"; };
 		8E739FF62A095D0C00044791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E766FA82A1C33B600CBFA75 /* snow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snow.mp3; sourceTree = "<group>"; };
+		8E766FA92A1C33B600CBFA75 /* fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fire.mp3; sourceTree = "<group>"; };
+		8E766FAC2A1C34D700CBFA75 /* random.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = random.mp3; sourceTree = "<group>"; };
 		8EA9040E2A0A681C0065FE4F /* RootViewSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewSetUp.swift; sourceTree = "<group>"; };
 		8EA904182A0E77DA0065FE4F /* SendOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOutView.swift; sourceTree = "<group>"; };
 		8EA9041B2A0E806F0065FE4F /* ConvertButtonToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertButtonToSwiftUI.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				8E1B5A1F2A074F76000A788F /* LottieSetUpView.swift */,
 				8EA9041A2A0E77E20065FE4F /* Views */,
 				8EA9040E2A0A681C0065FE4F /* RootViewSetUp.swift */,
+				8E766FA72A1C33A100CBFA75 /* Sounds */,
 				8E1B59352A01C435000A788F /* FiresideChatsModel.swift */,
 				8EA9040D2A0A67DA0065FE4F /* Lottie Animations */,
 				8E1B58F929FEF088000A788F /* MainInterface.storyboard */,
@@ -140,6 +147,16 @@
 				8E1B58FE29FEF089000A788F /* Info.plist */,
 			);
 			path = "Challenge6 MessagesExtension";
+			sourceTree = "<group>";
+		};
+		8E766FA72A1C33A100CBFA75 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				8E766FA92A1C33B600CBFA75 /* fire.mp3 */,
+				8E766FAC2A1C34D700CBFA75 /* random.mp3 */,
+				8E766FA82A1C33B600CBFA75 /* snow.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		8EA9040D2A0A67DA0065FE4F /* Lottie Animations */ = {
@@ -262,11 +279,14 @@
 			files = (
 				8E739FF72A095D0C00044791 /* Assets.xcassets in Resources */,
 				8E1B599D2A0526E5000A788F /* Fire.json in Resources */,
+				8E766FAB2A1C33B600CBFA75 /* fire.mp3 in Resources */,
 				8E336E062A115A4700A053F7 /* SnowEffect.json in Resources */,
 				8E336E082A115A5600A053F7 /* Snow.json in Resources */,
 				8EB56BDE2A16A5060046AD6D /* Assets.xcassets in Resources */,
+				8E766FAA2A1C33B600CBFA75 /* snow.mp3 in Resources */,
 				8E1B5A2A2A07E42E000A788F /* Burning.json in Resources */,
 				8E1B58FB29FEF088000A788F /* MainInterface.storyboard in Resources */,
+				8E766FAD2A1C34D700CBFA75 /* random.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
