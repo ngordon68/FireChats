@@ -31,12 +31,13 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 
 
 ## Objectives 
-- Code up a MVP(Mininum Viable Product) of a Routr App for remote workers
+- Code up a MVP(Mininum Viable Product) of a FireChats App
 - Take Hi-Fi specifications and translate to Xcode app.
 - Collaboration with coders and designers to bring our Hi-Fi prototype to life.
 - Test UI and UX through documentation.
 - Test code to find any inconsistencies.
 - Submit Project to TestFlight for UserFeedback and make changes accordingly.
+- Submit to the App Store
 
 ## Color Reference
 
@@ -48,34 +49,14 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 | Secondary Color | ![#8FEDF7](https://via.placeholder.com/10/8FEDF7?text=+) #8FEDF7 |
 
 
-## API Reference- Yelp API Intergration
 
-#### Get all items
-
-```http
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+# 02 Skills
+Swift, Swift UI, XCode, Figma, Sketch.
+Messages, AVKit, LottieFiles, UIKit
 
 
 
-## 🛠 Skills
-Swift, Swift UI, XCode, Figma, Sketch, YELP API, SwiftCharts, Combine
 
-
-
-# 02 Coding Topics
-
-- Classes
-- State Objects/Observable Object
-- Yelp API Intergation
-- Array Appending
-- NavigationLink
-- Bottom Sheets
-- Maps Integration
 
 
 # 03 Project Timeline
