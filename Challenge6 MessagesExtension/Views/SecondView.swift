@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SecondView: View {
     
-
-    
     @StateObject var vm = MessagesViewController.shared
 
     var body: some View {
@@ -43,15 +41,24 @@ struct SecondView: View {
                     .overlay (
                         
                         ZStack {
-//                            Image("fire")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .opacity(0.2)
                             
+                            Image("fire")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .scaleEffect(0.7)
+                                .opacity(0.2)
+ 
                             VStack {
+                                ShareLink(item: URL(string: "https://testflight.apple.com/join/tUSlOzsM")!) {
+                                    
+                                    Image(systemName: "square.and.arrow.up")
+                                        .font(.system(size: 40))
+                                }
+                                
                                 Text(self.vm.swiftUIText)
                                     .bold()
                                     .font(.largeTitle)
+                                
                                 HStack {
                                     Spacer()
                                     
