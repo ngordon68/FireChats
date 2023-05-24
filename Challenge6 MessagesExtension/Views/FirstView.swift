@@ -52,7 +52,6 @@ struct FirstView: View {
                                 .padding(.trailing, 100)
                                 .padding(.bottom, 30)
                                 
-                                
                             }
                             
                         }
@@ -69,11 +68,7 @@ struct FirstView: View {
                         ,
                         alignment: .topTrailing
                         
-                        
-                        
                     )
-                
-                
             }
             
         }
