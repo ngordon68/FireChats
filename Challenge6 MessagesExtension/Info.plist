@@ -13,5 +13,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GrandeuxSerif</string>
+	</array>
 </dict>
 </plist>

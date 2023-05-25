@@ -29,6 +29,7 @@ struct SendOutView: View {
                         Text(self.vm.swiftUIText)
                             .bold()
                             .font(.title3)
+                            .padding(.horizontal)
     
                     }
                 )
