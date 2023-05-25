@@ -8,18 +8,29 @@
 import SwiftUI
 
 struct VotedView: View {
+    
     @StateObject var vm = MessagesViewController.shared
+    @State var appColors = AppColors()
+    
     var body: some View {
+        
+        let gradient = vm.hotTapped ? Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)]) : Gradient(colors: [Color(appColors.lightBlue), Color(appColors.blue), Color(appColors.purple)])
+        
         Rectangle()
             .frame(width: 350, height: 300)
             .cornerRadius(20)
-            .foregroundColor(vm.didVote ? .orange : vm.coldTapped ? .blue: .red)
-            .animation(Animation.easeIn(duration: 3.0), value: vm.coldTapped)
+            .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
+            .shadow(color: .black, radius: 5, x: 0, y: 0)
+
             .overlay (
             
                         Text(self.vm.swiftUIText)
                             .bold()
-                            .font(.largeTitle)
+                            .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 40))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                            .frame(height: 100)
+                            .padding(.horizontal)
                         )
     }
 }

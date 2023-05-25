@@ -28,6 +28,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     @Published var hotTapped = false
     @Published var coldTapped = false
     @Published var didVote = true
+    @Published var startedGame = false
     
     var player: AVAudioPlayer?
     
@@ -58,6 +59,8 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
         print("Random tapped")
         if let firesideChat = firesideChats.fireChatPrompts.randomElement() {
             vm.swiftUIText = firesideChat.topic
+            
+            startedGame = true
     
         }
     }
@@ -91,41 +94,44 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     */
     
     @objc func sendMessage() {
-    
-        let vm = MessagesViewController.shared
-        //for some reason this resets when function is called
-
-        var urlComponents = URLComponents()
-        var items = [URLQueryItem]()
-       
-       //the issue is here with the value
-        let item = URLQueryItem(name: "name", value: vm.swiftUIText)
-    
-        items.append(item)
-        let gameSubtitle = "Tap to vote!"
-        
-        // Create a message layout with the game content
-        let layout = MSMessageTemplateLayout()
-        layout.subcaption = gameSubtitle
-        layout.image = .init(view: sendView)
-       
-        guard let conversation = activeConversation else {
-            fatalError("this error for guard")
+        let vmc = MessagesViewController.shared
+        if vmc.startedGame == true {
+            
+            let vm = MessagesViewController.shared
+            //for some reason this resets when function is called
+            
+            var urlComponents = URLComponents()
+            var items = [URLQueryItem]()
+            
+            //the issue is here with the value
+            let item = URLQueryItem(name: "name", value: vm.swiftUIText)
+            
+            items.append(item)
+            let gameSubtitle = "Tap to vote!"
+            
+            // Create a message layout with the game content
+            let layout = MSMessageTemplateLayout()
+            layout.subcaption = gameSubtitle
+            layout.image = .init(view: sendView)
+            
+            guard let conversation = activeConversation else {
+                fatalError("this error for guard")
+            }
+            // Create a message with the layout and URL
+            
+            let session = conversation.selectedMessage?.session ?? MSSession()
+            let message = MSMessage(session: MSSession())
+            message.layout = layout
+            message.summaryText = nil
+            
+            urlComponents.queryItems = items
+            message.url = urlComponents.url
+            layout.caption = "$\(conversation.localParticipantIdentifier) has a FireChat!"
+            
+            self.activeConversation?.insert(message)
+            
+            dismiss()
         }
-        // Create a message with the layout and URL
-        
-        let session = conversation.selectedMessage?.session ?? MSSession()
-        let message = MSMessage(session: MSSession())
-        message.layout = layout
-        message.summaryText = nil
-        
-        urlComponents.queryItems = items
-        message.url = urlComponents.url
-        layout.caption = "$\(conversation.localParticipantIdentifier) has a FireChat!"
-      
-        self.activeConversation?.insert(message)
-
-        dismiss()
     }
     
     @objc func sendGameBack() {
@@ -203,8 +209,8 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
            view.addSubview(hostingController.view)
            
            let config = UIImage.SymbolConfiguration(
-               pointSize: 20, weight: .medium, scale: .default)
-        let image = UIImage(systemName: "arrow.up.message.fill", withConfiguration: config)?.withTintColor(.systemBackground, renderingMode: .alwaysOriginal)
+               pointSize: 50, weight: .medium, scale: .default)
+        let image = UIImage(systemName: "arrow.up", withConfiguration: config)?.withTintColor(.systemBackground, renderingMode: .alwaysOriginal)
 
            
 
@@ -223,7 +229,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
       
            NSLayoutConstraint.activate([
             sendButton.centerXAnchor.constraint(equalTo: hostingController.view.centerXAnchor),
-            sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: 5)
+            sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: -20)
           
            ])
        }
@@ -243,7 +249,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
         let hostingController = UIHostingController(rootView: swiftUIView)
         let config = UIImage.SymbolConfiguration(
             pointSize: 36, weight: .medium, scale: .default)
-        let image = UIImage(systemName: "arrow.up.message.fill", withConfiguration: config)?.withTintColor(.systemBackground, renderingMode: .alwaysOriginal)
+        let image = UIImage(systemName: "arrow.up.message.fill", withConfiguration: config)?.withTintColor(.black, renderingMode: .alwaysOriginal)
        
         // Add the UIHostingController's view to the view hierarchy
         addChild(hostingController)
@@ -260,7 +266,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
         hostingController.view.addSubview(sendButton)
         sendButton.frame = CGRect(x: 170, y: 30, width: 0, height: 0)
         //sendButton.configuration = .filled()
-        //sendButton.configuration?.baseForegroundColor = .white
+        //sendButton.configuration?.baseForegroundColor = .purple
         
         
         sendButton.setImage(image, for: .normal)
@@ -270,7 +276,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
    
         NSLayoutConstraint.activate([
          sendButton.centerXAnchor.constraint(equalTo: hostingController.view.centerXAnchor, constant: 30),
-         sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: -5)
+         sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: 20)
        
         ])
     }

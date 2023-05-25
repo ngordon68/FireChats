@@ -7,14 +7,31 @@
 
 import SwiftUI
 
+class notificationViewModel {
+    
+    func alertUser() {
+        
+        //put function
+    }
+    
+    func triggerOnTap() {
+        
+    }
+}
+
 struct SecondView: View {
     
     @StateObject var vm = MessagesViewController.shared
+    @State var appColors = AppColors()
+    var notificationVM = notificationViewModel()
 
     var body: some View {
         
+        let gradient = vm.hotTapped ? Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)]) : Gradient(colors: [Color(appColors.lightBlue), Color(appColors.blue), Color(appColors.purple)])
+        
         ZStack {
             
+         
             if vm.coldTapped == true {
                 
                 LottieView(animationName: "SnowEffect")
@@ -34,10 +51,13 @@ struct SecondView: View {
             VStack {
     
                 Rectangle()
+                
                     .frame(width: 350, height: 300)
                     .cornerRadius(20)
-                    .foregroundColor(vm.didVote ? .orange : vm.coldTapped ? .blue: .red)
+                    //.foregroundColor(vm.didVote ? .orange : vm.coldTapped ? .blue: .red)
+                    .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
                     .animation(Animation.easeIn(duration: 0.5), value: vm.coldTapped)
+                    .shadow(color: .black, radius: 5, x: 0, y: 0)
                     .overlay (
                         
                         ZStack {
@@ -49,15 +69,16 @@ struct SecondView: View {
                                 .opacity(0.2)
  
                             VStack {
-                                ShareLink(item: URL(string: "https://testflight.apple.com/join/tUSlOzsM")!) {
-                                    
-                                    Image(systemName: "square.and.arrow.up")
-                                        .font(.system(size: 40))
-                                }
                                 
+                                
+    
                                 Text(self.vm.swiftUIText)
                                     .bold()
-                                    .font(.largeTitle)
+                                    .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 40))
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                                    .frame(height: 100)
+                                    .padding(.horizontal)
                                 
                                 HStack {
                                     Spacer()
@@ -66,15 +87,12 @@ struct SecondView: View {
                                         vm.startFire()
                                         vm.playSound(sound: .fire)
                                     } label: {
-                                        Text("🔥")
-                                            .font(.system(size: 50))
-                                            .overlay (
-                                                Text("👍🏾")
-                                                    .foregroundColor(.black)
-                                                    .bold()
-                                                    .font(.caption)
-                                            )
+                                        Text("👍")
+                                            .foregroundColor(.black)
+                                            .bold()
+                                          
                                     }
+                                    .font(.largeTitle)
                                     
                                     
                                     Spacer()
@@ -84,20 +102,18 @@ struct SecondView: View {
                                         vm.playSound(sound: .snow)
                                     } label: {
                                         
-                                        Text("❄️")
-                                            .font(.system(size: 50))
-                                            .overlay (
-                                                Text("👎🏾")
-                                                    .foregroundColor(.black)
-                                                    .bold()
-                                                    .font(.caption)
-                                            )
+                                
+                                        Text("👎")
+                                            .foregroundColor(.black)
+                                            .bold()
+                                            .font(.largeTitle)
                                     }
                       
                                     
                                     Spacer()
                                     
                                 }
+                                .padding(.bottom, 10)
                                 
                                 
                             }
@@ -106,7 +122,21 @@ struct SecondView: View {
                     )
                 
                 
-                
+                ShareLink(item: URL(string: "https://testflight.apple.com/join/tUSlOzsM")!) {
+                    
+                    Rectangle()
+                        .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .animation(Animation.easeIn(duration: 2), value: vm.coldTapped)
+                        .frame(width: 150)
+                        .frame(height: 50)
+                        .cornerRadius(20)
+                        .shadow(color: .black, radius: 5, x: 0, y: 0)
+                        .overlay (
+                   Text("SHARE")
+                    .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 40))
+                        .foregroundColor(.white)
+                   )
+                }
                 
             }  .offset(y: 150)
             
