@@ -26,7 +26,7 @@ struct VotedView: View {
             
                         Text(self.vm.swiftUIText)
                             .bold()
-                            .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 40))
+                            .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                             .frame(height: 100)

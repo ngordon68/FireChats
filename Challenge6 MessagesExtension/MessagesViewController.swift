@@ -34,7 +34,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     
     enum SoundOption: String {
         case fire
-        case snow
+        case snow2
         case random
     }
     

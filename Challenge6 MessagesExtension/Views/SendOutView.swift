@@ -11,12 +11,21 @@ struct SendOutView: View {
     
     @StateObject var vm = MessagesViewController.shared
     
+    @State var appColors = AppColors()
+    
+    
     var body: some View {
+        
+        let gradient = Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)])
+        
     
             Rectangle()
+            
                 .frame(width: 300, height: 200)
                 .cornerRadius(20)
-                .foregroundColor(.orange)
+                //.foregroundColor(.orange)
+                .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
+                .shadow(color: .black, radius: 5, x: 0, y: 0)
                 .overlay (
                     
                     ZStack {
@@ -27,8 +36,7 @@ struct SendOutView: View {
                         
                         
                         Text(self.vm.swiftUIText)
-                            .bold()
-                            .font(.title3)
+                            .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                             .padding(.horizontal)
     
                     }
