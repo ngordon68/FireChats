@@ -7,23 +7,13 @@
 
 import SwiftUI
 
-class notificationViewModel {
-    
-    func alertUser() {
-        
-        //put function
-    }
-    
-    func triggerOnTap() {
-        
-    }
-}
+
 
 struct SecondView: View {
     
     @StateObject var vm = MessagesViewController.shared
     @State var appColors = AppColors()
-    var notificationVM = notificationViewModel()
+  
 
     var body: some View {
         
@@ -74,7 +64,7 @@ struct SecondView: View {
     
                                 Text(self.vm.swiftUIText)
                                     .bold()
-                                    .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 40))
+                                    .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
                                     .frame(height: 100)
@@ -99,7 +89,7 @@ struct SecondView: View {
                                     
                                     Button {
                                         vm.startCold()
-                                        vm.playSound(sound: .snow)
+                                        vm.playSound(sound: .snow2)
                                     } label: {
                                         
                                 
@@ -120,10 +110,17 @@ struct SecondView: View {
                             
                         }
                     )
-                
-                
-                ShareLink(item: URL(string: "https://testflight.apple.com/join/tUSlOzsM")!) {
+
                     
+                    
+                ShareLink(
+                          item: URL(string: "https://testflight.apple.com/join/tUSlOzsM")!,
+                          subject: Text("Check out this firechat! \(vm.swiftUIText), 😱"),
+                          message: Text("Check out this firechat! \(vm.swiftUIText), 😱"),
+                          preview: SharePreview("Check out this firechat! \(vm.swiftUIText), 😱",
+                                                image: Image("fire")
+                                              )) {
+
                     Rectangle()
                         .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
                         .animation(Animation.easeIn(duration: 2), value: vm.coldTapped)
@@ -133,7 +130,7 @@ struct SecondView: View {
                         .shadow(color: .black, radius: 5, x: 0, y: 0)
                         .overlay (
                    Text("SHARE")
-                    .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 40))
+                        .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                         .foregroundColor(.white)
                    )
                 }

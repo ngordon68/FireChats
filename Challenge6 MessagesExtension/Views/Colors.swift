@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 struct AppColors {
@@ -18,5 +19,7 @@ struct AppColors {
     var pink = "CustomPink"
     var red = "CustomRed"
     var yellow = "CustomYellow"
+    
+//    static let gradient = vm.hotTapped ? Gradient(colors: [Color(yellow), Color(orange), Color(red), Color(pink)]) : Gradient(colors: [Color(lightBlue), Color(blue), Color(purple)])
     
 }

@@ -15,6 +15,17 @@ struct FirstView: View {
     var activeConversation: MSConversation?
     @State var appColors = AppColors()
     
+//    init() {
+//
+//        for familyName in UIFont.familyNames {
+//            print(familyName)
+//
+//            for fontName in UIFont.fontNames(forFamilyName: familyName) {
+//                print("--\(fontName)")
+//            }
+//        }
+//    }
+    
     var body: some View {
         
        // let gradient = vm.hotTapped ? Gradient(colors: [Color.yellow, Color.red]) : Gradient(colors: [Color.white, Color.blue])
@@ -54,8 +65,9 @@ struct FirstView: View {
                                 
                                 
                                 Text(self.vm.swiftUIText)
-                                   // .bold()
+                                  
                                     .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
+                              
                                     .frame(height: 100)
                                     .foregroundColor(.black)
                                     .padding(.horizontal)
