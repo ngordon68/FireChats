@@ -44,7 +44,6 @@ struct SecondView: View {
                 
                     .frame(width: 350, height: 300)
                     .cornerRadius(20)
-                    //.foregroundColor(vm.didVote ? .orange : vm.coldTapped ? .blue: .red)
                     .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
                     .animation(Animation.easeIn(duration: 0.5), value: vm.coldTapped)
                     .shadow(color: .black, radius: 5, x: 0, y: 0)
@@ -60,13 +59,12 @@ struct SecondView: View {
  
                             VStack {
                                 
-                                
-    
                                 Text(self.vm.swiftUIText)
                                     .bold()
                                     .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
+                                    .minimumScaleFactor(0.2)
                                     .frame(height: 100)
                                     .padding(.horizontal)
                                 
@@ -111,7 +109,6 @@ struct SecondView: View {
                         }
                     )
 
-                    
                     
                 ShareLink(
                           item: URL(string: "https://testflight.apple.com/join/tUSlOzsM")!,

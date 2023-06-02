@@ -54,9 +54,11 @@ struct FirstView: View {
                                 
                                 Button {
                                     
+                                    
                                 } label: {
                                     Image(systemName: "square.and.pencil")
-                                        .font(.system(size: 36))
+                                       // .font(.system(size: 36))
+                                        .font(.largeTitle)
                                         .foregroundColor(.white)
                                     
                                 }
@@ -67,7 +69,7 @@ struct FirstView: View {
                                 Text(self.vm.swiftUIText)
                                   
                                     .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
-                              
+                                    .minimumScaleFactor(0.2)
                                     .frame(height: 100)
                                     .foregroundColor(.black)
                                     .padding(.horizontal)
@@ -80,7 +82,8 @@ struct FirstView: View {
                                 } label: {
                                     Image(systemName: "arrow.clockwise.circle")
                                         .foregroundColor(.black)
-                                        .font(.system(size: 36))
+                                       // .font(.system(size: 36))
+                                        .font(.largeTitle)
                                     
                                 }
                                 
@@ -92,7 +95,8 @@ struct FirstView: View {
                         }
                     )
                
-            } //VStack
+            }
+        //VStack
             
        // } // Geo reader
         
