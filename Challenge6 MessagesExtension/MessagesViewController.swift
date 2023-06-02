@@ -107,10 +107,10 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
             let item = URLQueryItem(name: "name", value: vm.swiftUIText)
             
             items.append(item)
-            let gameSubtitle = "Tap to vote!"
-            
+                        
             // Create a message layout with the game content
             let layout = MSMessageTemplateLayout()
+            let gameSubtitle = "Tap to vote"
             layout.subcaption = gameSubtitle
             layout.image = .init(view: sendView)
             
@@ -119,14 +119,18 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
             }
             // Create a message with the layout and URL
             
-            let session = conversation.selectedMessage?.session ?? MSSession()
+            //let session = conversation.selectedMessage?.session ?? MSSession()
             let message = MSMessage(session: MSSession())
             message.layout = layout
             message.summaryText = nil
             
             urlComponents.queryItems = items
             message.url = urlComponents.url
-            layout.caption = "$\(conversation.localParticipantIdentifier) has a FireChat!"
+            
+
+            let sender = conversation.selectedMessage?.senderParticipantIdentifier
+            
+           //layout.caption = "$\(sender?.uuid) likes Sprinkles!"
             
             self.activeConversation?.insert(message)
             

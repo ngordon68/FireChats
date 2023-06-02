@@ -53,9 +53,12 @@ class FiresideChats {
         FiresideChatModel(topic: "Fall is the best season"),
         FiresideChatModel(topic: "Everyone should travel alone atleast once in their life"),
         FiresideChatModel(topic: "Pepsi is a better product than Coke"),
-        FiresideChatModel(topic: "Tomatoes are a vegetable"),
+        FiresideChatModel(topic: "Tomatoes are a fruit"),
         FiresideChatModel(topic: "Pie is a better dessert than cake"),
-        FiresideChatModel(topic: "hot sandwiches are better than cold sandwiches")
+        FiresideChatModel(topic: "hot sandwiches are better than cold sandwiches"),
+        FiresideChatModel(topic: "smooth peanut butter is better than crunchy"),
+        FiresideChatModel(topic: "hard shell tacos are better than soft shell")
+        
         
     ]
 }
