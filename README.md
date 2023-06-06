@@ -8,6 +8,21 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 
 ## 
 <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://user-images.githubusercontent.com/124601363/219433319-6f2c39df-5b1c-45aa-a61e-9c4a8dc71baa.png">
+<img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://user-images.githubusercontent.com/124601363/219433319-6f2c39df-5b1c-45aa-a61e-9c4a8dc71baa.png">
+<img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://user-images.githubusercontent.com/124601363/219433319-6f2c39df-5b1c-45aa-a61e-9c4a8dc71baa.png">
+<img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://user-images.githubusercontent.com/124601363/219433319-6f2c39df-5b1c-45aa-a61e-9c4a8dc71baa.png">
+<img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://user-images.githubusercontent.com/124601363/219433319-6f2c39df-5b1c-45aa-a61e-9c4a8dc71baa.png">
+
+
+
+
+
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-06-02 at 13 34 44](https://github.com/ngordon68/FireChats/assets/102773701/bcec6974-955e-432a-a065-881cfe5fb9cd)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-06-02 at 13 34 53](https://github.com/ngordon68/FireChats/assets/102773701/b6a7f061-8e01-4c70-a5ca-a0328382f26b)
+
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-06-02 at 13 35 03](https://github.com/ngordon68/FireChats/assets/102773701/4af1743f-9ce7-4d72-aba2-2e6520e2b30d)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-06-02 at 13 35 07](https://github.com/ngordon68/FireChats/assets/102773701/d9a9a010-4842-42bc-9013-d9efbba2c560)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-06-02 at 13 35 36](https://github.com/ngordon68/FireChats/assets/102773701/6b5d60e5-d88d-4d17-8e2e-650323b27006)
 
 <table>
  <tr>
