@@ -15,24 +15,7 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 
 
 
-<table>
- <tr>
-  <td>
-  <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 51 24 AM" src="https://user-images.githubusercontent.com/124601363/219971727-8d45fc51-7ff6-42ec-8c9a-7c7d0636b110.png">
 
-
-  
-  <td>
-   
- <img width="290" alt="Screen Shot 2023-02-19 at 3 08 17 PM" src="https://user-images.githubusercontent.com/124601363/219972589-c770946f-b243-4135-81a8-61e6af5f70c8.png">
-
-
- 
-  <td>
-  <tr>
-  
-   <table>
-  
 
 
 
