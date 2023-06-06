@@ -73,7 +73,7 @@ Messages, AVKit, LottieFiles, UIKit
     
 The Imessage game took alot of learning as it involed the messages framework and a game which is completely different from the standard iOS phone apps in the past. The idea of the app is to allow the user to select prompts from a generated list of 50 to send out to the group chat. The user then can tap on the card to vote either agree or disagree with the correesponding animations and color. 
     
-The app uses the Messages framework which is naturally in UIkit and Storyboard. At first, making the components took alot more work than compared to SwiftUI and we realized that our app wouldnt make the deadline of the project scope.    
+The app uses the Messages framework which is naturally in UIkit and Storyboard. At first, making the components took alot more work than compared to SwiftUI and we realized that our app wouldnt make the deadline of the project scope.     
     
     
 # 06 Demo
