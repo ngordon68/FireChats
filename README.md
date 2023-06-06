@@ -66,6 +66,8 @@ Messages, AVKit, LottieFiles, UIKit
    
 # 05 Technical Walkthrough
     
+ The Imessage game took alot of learning as it involed the messages framework and a game which is completely different from the standard iOS phone apps in the past.
+    
     
    
 
