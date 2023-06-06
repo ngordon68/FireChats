@@ -40,15 +40,16 @@ Messages, AVKit, LottieFiles, UIKit
 # 04 Project Timeline
 
 
+
  <table>
  <tr>
   <td>
  
-    <img width="224" alt="Screen Shot 2023-02-19 at 3 02 12 PM" src="https://github.com/ngordon68/FireChats/assets/102773701/cd95e836-7dd7-4465-8027-dc3e01d98a4f">
+   
+
   <td>
-   
-    <img width="224" alt="Screen Shot 2023-02-19 at 3 02 12 PM" src="https://github.com/ngordon68/FireChats/assets/102773701/cd95e836-7dd7-4465-8027-dc3e01d98a4f">
-   
+ <img width="224" alt="Screen Shot 2023-02-19 at 3 02 12 PM" src="https://user-images.githubusercontent.com/124601363/219972338-2c7dc4ab-676e-48dd-9e74-47b3210e9e2a.png">
+
    <td>
    
    <img width="224" alt="week2" src="https://user-images.githubusercontent.com/124601363/219970911-228e0e89-ecce-4af7-b2ec-d79adfcc28f3.png">
@@ -61,8 +62,7 @@ Messages, AVKit, LottieFiles, UIKit
 
   <td>
   <tr>
-   <table>
-    
+   <table>  
    
 # 05 Technical Walkthrough
     
