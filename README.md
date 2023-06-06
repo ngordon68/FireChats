@@ -19,7 +19,7 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 
 
 
-## Objectives 
+# 02 Objectives 
 - Code up a MVP(Mininum Viable Product) of a FireChats App
 - Take Hi-Fi specifications and translate to Xcode app.
 - Collaboration with coders and designers to bring our Hi-Fi prototype to life.
@@ -28,18 +28,7 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 - Submit Project to TestFlight for UserFeedback and make changes accordingly.
 - Submit to the App Store
 
-## Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Accent Color | ![#C0E2E3](https://via.placeholder.com/10/C0E2E3?text=+) #C0E2E3 |
-| Primary Color | ![#074750](https://via.placeholder.com/10/074750?text=+) #074750 |
-| Primary Color | ![#3EABB2](https://via.placeholder.com/10/3EABB2?text=+) #3EABB2 |
-| Secondary Color | ![#8FEDF7](https://via.placeholder.com/10/8FEDF7?text=+) #8FEDF7 |
-
-
-
-# 02 Skills
+# 03 Skills
 Swift, Swift UI, XCode, Figma, Sketch.
 Messages, AVKit, LottieFiles, UIKit
 
@@ -48,7 +37,7 @@ Messages, AVKit, LottieFiles, UIKit
 
 
 
-# 03 Project Timeline
+# 04 Project Timeline
 
 
  <table>
@@ -72,7 +61,10 @@ Messages, AVKit, LottieFiles, UIKit
 
   <td>
   <tr>
-   <table>   
+   <table>
+    
+   
+# 05 Technical Walkthrough
     
     
    
