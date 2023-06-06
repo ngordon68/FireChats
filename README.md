@@ -58,6 +58,11 @@ Messages, AVKit, LottieFiles, UIKit
   
   <td>
   <img width="224" alt="week3" src="https://github.com/ngordon68/FireChats/assets/102773701/cf1875b3-2eb2-42a6-81bd-60c0267975bf">
+   
+   <td>
+    
+  <img width="224" alt="week3" src="https://github.com/ngordon68/FireChats/assets/102773701/28123804-405f-4e77-a97f-2652ae708e72">
+
 
 
   <td>
