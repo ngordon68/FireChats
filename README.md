@@ -44,8 +44,7 @@ Messages, AVKit, LottieFiles, UIKit
  <tr>
   <td>
  
-   
-
+    <img width="224" alt="Screen Shot 2023-02-19 at 3 02 12 PM" src="https://github.com/ngordon68/FireChats/assets/102773701/cd95e836-7dd7-4465-8027-dc3e01d98a4f">
   <td>
    
     <img width="224" alt="Screen Shot 2023-02-19 at 3 02 12 PM" src="https://github.com/ngordon68/FireChats/assets/102773701/cd95e836-7dd7-4465-8027-dc3e01d98a4f">
