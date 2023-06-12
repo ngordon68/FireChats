@@ -25,8 +25,6 @@ class FiresideChats {
     
     let fireChatPrompts:[FiresideChatModel] = [
         
-        
-        
         FiresideChatModel(topic: "Apple is better than Android"),
         FiresideChatModel(topic: "Dogs are better pets than cats" ),
         FiresideChatModel(topic: "Downtown Chicago is better than Downtown Detroit"),
@@ -36,12 +34,10 @@ class FiresideChats {
         FiresideChatModel(topic: "Flats are better than drums"),
         FiresideChatModel(topic: "Cake is better than pie"),
         FiresideChatModel(topic: "Eastside is better than westside"),
-        FiresideChatModel(topic: "American Coney Island is better than Lafayette Conry Island"),
         FiresideChatModel(topic: "Anita Baker is better than Aretha Franklin"),
         FiresideChatModel(topic: "Lebron is better than Michael Jordan"),
         FiresideChatModel(topic: "Brandy is better than Monica"),
         FiresideChatModel(topic: "Michigan is better than MSU"),
-        FiresideChatModel(topic: "Slow’s Bbq is trash"),
         FiresideChatModel(topic: "Sada Baby is better than Vezzo"),
         FiresideChatModel(topic: "BMF is better than Power"),
         FiresideChatModel(topic: "DC is better than Marvel"),
@@ -57,8 +53,11 @@ class FiresideChats {
         FiresideChatModel(topic: "Pie is a better dessert than cake"),
         FiresideChatModel(topic: "hot sandwiches are better than cold sandwiches"),
         FiresideChatModel(topic: "smooth peanut butter is better than crunchy"),
-        FiresideChatModel(topic: "hard shell tacos are better than soft shell")
-        
-        
+        FiresideChatModel(topic: "hard shell tacos are better than soft shell"),
+        FiresideChatModel(topic: "SnapChat is for cheaters"),
+        FiresideChatModel(topic: "Twitter is better than Instagram"),
+        FiresideChatModel(topic: "Taylor Swiftie fans are overrated"),
+        FiresideChatModel(topic: "Detroit rappers are overrated"),
+        FiresideChatModel(topic: "The gamecube is the best nintendo console")
     ]
 }

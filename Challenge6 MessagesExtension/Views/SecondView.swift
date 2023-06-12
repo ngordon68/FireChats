@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-
 struct SecondView: View {
     
     @StateObject var vm = MessagesViewController.shared
@@ -20,26 +19,24 @@ struct SecondView: View {
         let gradient = vm.hotTapped ? Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)]) : Gradient(colors: [Color(appColors.lightBlue), Color(appColors.blue), Color(appColors.purple)])
         
         ZStack {
-            
-         
+        
             if vm.coldTapped == true {
                 
                 LottieView(animationName: "SnowEffect")
                     .scaleEffect(1)
-                
-                
             }
             
             
             if vm.hotTapped == true {
                 LottieView(animationName: "Burning")
-                    .scaleEffect(0.85)
-                    .offset(y: -80)
+                   // .scaleEffect(0.85)
+                    .scaleEffect(0.90)
+                    .offset(y: -110)
                 
             }
             
+            
             VStack {
-    
                 Rectangle()
                 
                     .frame(width: 350, height: 300)
@@ -111,11 +108,11 @@ struct SecondView: View {
 
                     
                 ShareLink(
-                          item: URL(string: "https://testflight.apple.com/join/tUSlOzsM")!,
-                          subject: Text("Check out this firechat! \(vm.swiftUIText), 😱"),
+                          item: URL(string: "https://apps.apple.com/us/app/firechats/id6449296459")!,
+                         // subject: Text("Check out this firechat! \(vm.swiftUIText), 😱"),
                           message: Text("Check out this firechat! \(vm.swiftUIText), 😱"),
                           preview: SharePreview("Check out this firechat! \(vm.swiftUIText), 😱",
-                                                image: Image("fire")
+                                                image: Image("AppIcon")
                                               )) {
 
                     Rectangle()
