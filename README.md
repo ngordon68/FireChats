@@ -74,10 +74,14 @@ The app uses the Messages framework which is naturally in UIkit and Storyboard. 
 
     
 
-https://github.com/ngordon68/FireChats/assets/102773701/df00e56f-3221-4d2d-bc5d-34d4719dcdde
+
 
 
     
+
+https://github.com/ngordon68/FireChats/assets/102773701/eae9dd79-9f33-4e07-9819-fcd0748d87cd
+
+
 
 
 
