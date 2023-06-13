@@ -65,9 +65,9 @@ Messages, AVKit, LottieFiles, UIKit
    
 # 05 Technical Walkthrough
     
-The Imessage game took alot of learning as it involed the messages framework and a game which is completely different from the standard iOS phone apps in the past. The idea of the app is to allow the user to select prompts from a generated list of 50 to send out to the group chat. The user then can tap on the card to vote either agree or disagree with the correesponding animations and color. 
+The iMessage game took a lot of learning as it involed using the messages framework and a game which is completely different from the standard iOS phone apps in the past that I developed. The idea of the app is to allow the user to select prompts from a generated list of 50 to send out to the group chat. The user then can tap on the card to vote either agree or disagree with the correesponding animations and color. 
     
-The app uses the Messages framework which is naturally in UIkit and Storyboard. At first, making the components took alot more work than compared to SwiftUI and we realized that our app wouldnt make the deadline of the project scope.     
+The app uses the Messages framework which is naturally in UIkit and Storyboard. At first, making the components took alot more work than compared to SwiftUI and we realized that our app wouldnt make the deadline of the project scope.  Using the SceneDelegate class in UIkit allowed for the bypass of using storyboard and making a UIkit view the root view when the user enteres the app. From there, there was difficuilty trying to code a view in UIkit as there was alot of unfamiliar code needed to make a view that would have taken 3x less code in SwiftUI. Trying for a few days, we realized that we would not make the deadline if we relied on UIkit as it would have taken time to learn how to make a view and making it functional to the Hi-Fi. The solution to this was to make the views in SwiftUI then to convert to a UIkit view using the UIHostingController rootview.    
     
     
 # 06 Demo
