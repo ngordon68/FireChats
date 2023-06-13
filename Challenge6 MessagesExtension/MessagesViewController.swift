@@ -29,7 +29,9 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     @Published var coldTapped = false
     @Published var didVote = true
     @Published var startedGame = false
-    
+    @Published var remainingCustomPrompts = 3
+    @Published var isshowingPromptField = false
+
     var player: AVAudioPlayer?
     
     enum SoundOption: String {
@@ -88,6 +90,18 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
         vm.didVote = true
     }
     
+    func showPromptField() {
+        
+        let vm = MessagesViewController.shared
+        vm.isshowingPromptField.toggle()
+        
+        if vm.isshowingPromptField == true {
+            requestPresentationStyle(.expanded)
+            vm.swiftUIText = "Please enter prompt"
+            vm.remainingCustomPrompts -= 1
+        }
+    }
+    
    /*
     this section handles sending the game intially to the chat
     there is another function that handles when the user votes and send to chat
@@ -115,7 +129,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
             layout.image = .init(view: sendView)
             
             guard let conversation = activeConversation else {
-                fatalError("this error for guard")
+                fatalError("this error for guard statement to find active conversation")
             }
             // Create a message with the layout and URL
             
@@ -233,7 +247,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
       
            NSLayoutConstraint.activate([
             sendButton.centerXAnchor.constraint(equalTo: hostingController.view.centerXAnchor),
-            sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: -20)
+            sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: 0)
           
            ])
        }
@@ -280,7 +294,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
    
         NSLayoutConstraint.activate([
          sendButton.centerXAnchor.constraint(equalTo: hostingController.view.centerXAnchor, constant: 30),
-         sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: 20)
+         sendButton.centerYAnchor.constraint(equalTo: hostingController.view.centerYAnchor, constant: 0)
        
         ])
     }
@@ -382,6 +396,14 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
         // Called before the extension transitions to a new presentation style.
     
         // Use this method to prepare for the change in presentation style.
+        
+//        if self.isshowingPromptField == true {
+//            guard let conversation = activeConversation else { fatalError("Expected an active conversation")}
+//            presentationStyle = .expanded
+//
+//            presentViewController(for: conversation, with: presentationStyle)
+//
+//        }
         
         guard let conversation = activeConversation else { fatalError("Expected an active conversation")}
         

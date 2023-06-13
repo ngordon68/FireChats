@@ -10,14 +10,13 @@
 		8E1473612A295AE5008AD13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1473602A295AE5008AD13D /* Assets.xcassets */; };
 		8E1473632A295C58008AD13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1473622A295C58008AD13D /* Assets.xcassets */; };
 		8E1473642A295C58008AD13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1473622A295C58008AD13D /* Assets.xcassets */; };
-		8E1B58F029FEF088000A788F /* Challenge6 MessagesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8E1B58EF29FEF088000A788F /* Challenge6 MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8E1B58F529FEF088000A788F /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1B58F429FEF088000A788F /* Messages.framework */; };
+		8E14736A2A2A5B53008AD13D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8E1473692A2A5B53008AD13D /* Lottie */; };
+		8E1B58F029FEF088000A788F /* FireChats MessagesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8E1B58EF29FEF088000A788F /* FireChats MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8E1B58F829FEF088000A788F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B58F729FEF088000A788F /* MessagesViewController.swift */; };
 		8E1B58FB29FEF088000A788F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B58F929FEF088000A788F /* MainInterface.storyboard */; };
 		8E1B59362A01C435000A788F /* FiresideChatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B59352A01C435000A788F /* FiresideChatsModel.swift */; };
 		8E1B599C2A0526E5000A788F /* Fire.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B599B2A0526E5000A788F /* Fire.json */; };
 		8E1B599D2A0526E5000A788F /* Fire.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B599B2A0526E5000A788F /* Fire.json */; };
-		8E1B59A42A0577A5000A788F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8E1B59A32A0577A5000A788F /* Lottie */; };
 		8E1B5A152A073A17000A788F /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B5A142A073A17000A788F /* FirstView.swift */; };
 		8E1B5A202A074F76000A788F /* LottieSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B5A1F2A074F76000A788F /* LottieSetUpView.swift */; };
 		8E1B5A262A07DCF8000A788F /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B5A252A07DCF8000A788F /* SecondView.swift */; };
@@ -54,7 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8E1B58F029FEF088000A788F /* Challenge6 MessagesExtension.appex in Embed Foundation Extensions */,
+				8E1B58F029FEF088000A788F /* FireChats MessagesExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,9 +62,9 @@
 
 /* Begin PBXFileReference section */
 		8E1473602A295AE5008AD13D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8E1473622A295C58008AD13D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8E1B58E629FEF088000A788F /* Challenge6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge6.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E1B58EF29FEF088000A788F /* Challenge6 MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Challenge6 MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1473622A295C58008AD13D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Lottie Animations/Assets.xcassets"; sourceTree = "<group>"; };
+		8E1B58E629FEF088000A788F /* FireChats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1B58EF29FEF088000A788F /* FireChats MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FireChats MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1B58F429FEF088000A788F /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8E1B58F729FEF088000A788F /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8E1B58FA29FEF088000A788F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -95,8 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E1B58F529FEF088000A788F /* Messages.framework in Frameworks */,
-				8E1B59A42A0577A5000A788F /* Lottie in Frameworks */,
+				8E14736A2A2A5B53008AD13D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +114,8 @@
 		8E1B58E729FEF088000A788F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E1B58E629FEF088000A788F /* Challenge6.app */,
-				8E1B58EF29FEF088000A788F /* Challenge6 MessagesExtension.appex */,
+				8E1B58E629FEF088000A788F /* FireChats.app */,
+				8E1B58EF29FEF088000A788F /* FireChats MessagesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +144,7 @@
 				8E1B5A1F2A074F76000A788F /* LottieSetUpView.swift */,
 				8EA9041A2A0E77E20065FE4F /* Views */,
 				8EA9040E2A0A681C0065FE4F /* RootViewSetUp.swift */,
+				8E1473622A295C58008AD13D /* Assets.xcassets */,
 				8E766FA72A1C33A100CBFA75 /* Sounds */,
 				8E1B59352A01C435000A788F /* FiresideChatsModel.swift */,
 				8EA9040D2A0A67DA0065FE4F /* Lottie Animations */,
@@ -171,7 +170,6 @@
 			children = (
 				8E1B5A292A07E42E000A788F /* Burning.json */,
 				8E336E052A115A4700A053F7 /* SnowEffect.json */,
-				8E1473622A295C58008AD13D /* Assets.xcassets */,
 				8E336E072A115A5600A053F7 /* Snow.json */,
 				8E1B599B2A0526E5000A788F /* Fire.json */,
 			);
@@ -194,9 +192,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8E1B58E529FEF088000A788F /* Challenge6 */ = {
+		8E1B58E529FEF088000A788F /* FireChats */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E1B590529FEF089000A788F /* Build configuration list for PBXNativeTarget "Challenge6" */;
+			buildConfigurationList = 8E1B590529FEF089000A788F /* Build configuration list for PBXNativeTarget "FireChats" */;
 			buildPhases = (
 				8E1B58E429FEF088000A788F /* Resources */,
 				8E1B590429FEF089000A788F /* Embed Foundation Extensions */,
@@ -206,14 +204,14 @@
 			dependencies = (
 				8E1B58F229FEF088000A788F /* PBXTargetDependency */,
 			);
-			name = Challenge6;
+			name = FireChats;
 			productName = Challenge6;
-			productReference = 8E1B58E629FEF088000A788F /* Challenge6.app */;
+			productReference = 8E1B58E629FEF088000A788F /* FireChats.app */;
 			productType = "com.apple.product-type.application.messages";
 		};
-		8E1B58EE29FEF088000A788F /* Challenge6 MessagesExtension */ = {
+		8E1B58EE29FEF088000A788F /* FireChats MessagesExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E1B590129FEF089000A788F /* Build configuration list for PBXNativeTarget "Challenge6 MessagesExtension" */;
+			buildConfigurationList = 8E1B590129FEF089000A788F /* Build configuration list for PBXNativeTarget "FireChats MessagesExtension" */;
 			buildPhases = (
 				8E1B58EB29FEF088000A788F /* Sources */,
 				8E1B58EC29FEF088000A788F /* Frameworks */,
@@ -223,12 +221,12 @@
 			);
 			dependencies = (
 			);
-			name = "Challenge6 MessagesExtension";
+			name = "FireChats MessagesExtension";
 			packageProductDependencies = (
-				8E1B59A32A0577A5000A788F /* Lottie */,
+				8E1473692A2A5B53008AD13D /* Lottie */,
 			);
 			productName = "Challenge6 MessagesExtension";
-			productReference = 8E1B58EF29FEF088000A788F /* Challenge6 MessagesExtension.appex */;
+			productReference = 8E1B58EF29FEF088000A788F /* FireChats MessagesExtension.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +247,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8E1B58E329FEF088000A788F /* Build configuration list for PBXProject "Challenge6" */;
+			buildConfigurationList = 8E1B58E329FEF088000A788F /* Build configuration list for PBXProject "FireChats" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,14 +257,14 @@
 			);
 			mainGroup = 8E1B58DF29FEF088000A788F;
 			packageReferences = (
-				8E1B59A22A0577A5000A788F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				8E1473682A2A5B53008AD13D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 8E1B58E729FEF088000A788F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E1B58E529FEF088000A788F /* Challenge6 */,
-				8E1B58EE29FEF088000A788F /* Challenge6 MessagesExtension */,
+				8E1B58E529FEF088000A788F /* FireChats */,
+				8E1B58EE29FEF088000A788F /* FireChats MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -326,7 +324,7 @@
 /* Begin PBXTargetDependency section */
 		8E1B58F229FEF088000A788F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E1B58EE29FEF088000A788F /* Challenge6 MessagesExtension */;
+			target = 8E1B58EE29FEF088000A788F /* FireChats MessagesExtension */;
 			targetProxy = 8E1B58F129FEF088000A788F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -397,6 +395,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = FireChats;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -450,6 +449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = FireChats;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -462,18 +462,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessages App Icon ";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Challenge6 MessagesExtension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Challenge6;
+				INFOPLIST_KEY_CFBundleDisplayName = FireChats;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -488,18 +488,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessages App Icon ";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Challenge6 MessagesExtension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Challenge6;
+				INFOPLIST_KEY_CFBundleDisplayName = FireChats;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -515,14 +515,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Challenge6/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -540,14 +540,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Challenge6/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -562,7 +562,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E1B58E329FEF088000A788F /* Build configuration list for PBXProject "Challenge6" */ = {
+		8E1B58E329FEF088000A788F /* Build configuration list for PBXProject "FireChats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E1B58FF29FEF089000A788F /* Debug */,
@@ -571,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E1B590129FEF089000A788F /* Build configuration list for PBXNativeTarget "Challenge6 MessagesExtension" */ = {
+		8E1B590129FEF089000A788F /* Build configuration list for PBXNativeTarget "FireChats MessagesExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E1B590229FEF089000A788F /* Debug */,
@@ -580,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E1B590529FEF089000A788F /* Build configuration list for PBXNativeTarget "Challenge6" */ = {
+		8E1B590529FEF089000A788F /* Build configuration list for PBXNativeTarget "FireChats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E1B590629FEF089000A788F /* Debug */,
@@ -592,20 +592,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8E1B59A22A0577A5000A788F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		8E1473682A2A5B53008AD13D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8E1B59A32A0577A5000A788F /* Lottie */ = {
+		8E1473692A2A5B53008AD13D /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8E1B59A22A0577A5000A788F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = 8E1473682A2A5B53008AD13D /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */

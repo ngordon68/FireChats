@@ -11,9 +11,20 @@ import Messages
 
 struct FirstView: View {
     
-    @StateObject var vm = MessagesViewController.shared
-    var activeConversation: MSConversation?
+    @ObservedObject var vm = MessagesViewController.shared
+   // var activeConversation: MSConversation?
     @State var appColors = AppColors()
+   
+
+    
+//    func showPromptField() {
+//        vm.isshowingPromptField.toggle()
+//
+//        if vm.isshowingPromptField == true {
+//            vm.swiftUIText = "Please enter prompt"
+//            vm.remainingCustomPrompts -= 1
+//        }
+//    }
     
 //    init() {
 //
@@ -27,11 +38,8 @@ struct FirstView: View {
 //    }
     
     var body: some View {
-        
-       // let gradient = vm.hotTapped ? Gradient(colors: [Color.yellow, Color.red]) : Gradient(colors: [Color.white, Color.blue])
-        
+                
         let gradient = Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)])
-        
         
             VStack {
                 
@@ -52,29 +60,47 @@ struct FirstView: View {
                             
                             VStack {
                                 
-                                Button {
+//                                Button {
+//                                    
+//                                    vm.sendMessage()
+//                                } label: {
+//                                    Image(systemName: "square.and.pencil")
+//                                       // .font(.system(size: 36))
+//                                        .font(.largeTitle)
+//                                        .foregroundColor(.white)
+//                                    
+//                                }
+//                                //.padding(.top, 30)
+//                                .offset(y: 20)
+                                
+                                if vm.isshowingPromptField == true {
                                     
-                                    
-                                } label: {
-                                    Image(systemName: "square.and.pencil")
-                                       // .font(.system(size: 36))
-                                        .font(.largeTitle)
-                                        .foregroundColor(.white)
+                                    TextField("Enter prompt", text: $vm.swiftUIText)
+                                        .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
+                                        .minimumScaleFactor(0.2)
+                                        .frame(height: 100)
+                                        .frame(width: 250)
+                                        .foregroundColor(.black)
+                                        .padding(.horizontal)
+
                                     
                                 }
-                                //.padding(.top, 30)
-                                .offset(y: 20)
                                 
-                                
-                                Text(self.vm.swiftUIText)
+                                if vm.isshowingPromptField == false {
+                                    
+                                    Text(self.vm.swiftUIText)
+                                      
+                                        .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
+                                        .minimumScaleFactor(0.2)
+                                        .frame(height: 100)
+                                        .foregroundColor(.black)
+                                        .padding(.horizontal)
                                   
-                                    .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
-                                    .minimumScaleFactor(0.2)
-                                    .frame(height: 100)
-                                    .foregroundColor(.black)
-                                    .padding(.horizontal)
+
+                                }
                                 
-                                
+                            
+                            
                                 Button {
                                     vm.randomFireSideChat()
                                     vm.playSound(sound: .random)
@@ -82,7 +108,6 @@ struct FirstView: View {
                                 } label: {
                                     Image(systemName: "arrow.clockwise.circle")
                                         .foregroundColor(.black)
-                                       // .font(.system(size: 36))
                                         .font(.largeTitle)
                                     
                                 }
