@@ -24,6 +24,7 @@
 		8E336E042A1157C900A053F7 /* VotedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E336E032A1157C900A053F7 /* VotedView.swift */; };
 		8E336E062A115A4700A053F7 /* SnowEffect.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E336E052A115A4700A053F7 /* SnowEffect.json */; };
 		8E336E082A115A5600A053F7 /* Snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E336E072A115A5600A053F7 /* Snow.json */; };
+		8E39079E2A3B61130092B987 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E39079D2A3B61130092B987 /* StoreKitManager.swift */; };
 		8E44F6FE2A251EF0009691ED /* snow2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8E44F6FD2A251EF0009691ED /* snow2.mp3 */; };
 		8E44F7042A2522F3009691ED /* MainFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E44F7032A2522F3009691ED /* MainFont.ttf */; };
 		8E44F7052A2522F3009691ED /* MainFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E44F7032A2522F3009691ED /* MainFont.ttf */; };
@@ -78,6 +79,7 @@
 		8E336E032A1157C900A053F7 /* VotedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotedView.swift; sourceTree = "<group>"; };
 		8E336E052A115A4700A053F7 /* SnowEffect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SnowEffect.json; sourceTree = "<group>"; };
 		8E336E072A115A5600A053F7 /* Snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Snow.json; sourceTree = "<group>"; };
+		8E39079D2A3B61130092B987 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		8E44F6FD2A251EF0009691ED /* snow2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snow2.mp3; sourceTree = "<group>"; };
 		8E44F7032A2522F3009691ED /* MainFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainFont.ttf; sourceTree = "<group>"; };
 		8E766FA82A1C33B600CBFA75 /* snow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snow.mp3; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1B5A252A07DCF8000A788F /* SecondView.swift */,
+				8E39079D2A3B61130092B987 /* StoreKitManager.swift */,
 				8E336E032A1157C900A053F7 /* VotedView.swift */,
 				8E1B5A142A073A17000A788F /* FirstView.swift */,
 				8EA9041B2A0E806F0065FE4F /* ConvertButtonToSwiftUI.swift */,
@@ -313,6 +316,7 @@
 				8E1B5A202A074F76000A788F /* LottieSetUpView.swift in Sources */,
 				8E1B5A152A073A17000A788F /* FirstView.swift in Sources */,
 				8EA9040F2A0A681C0065FE4F /* RootViewSetUp.swift in Sources */,
+				8E39079E2A3B61130092B987 /* StoreKitManager.swift in Sources */,
 				8EA904192A0E77DA0065FE4F /* SendOutView.swift in Sources */,
 				8E1B58F829FEF088000A788F /* MessagesViewController.swift in Sources */,
 				8E336E042A1157C900A053F7 /* VotedView.swift in Sources */,
@@ -462,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessages App Icon ";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Challenge6 MessagesExtension/Info.plist";
@@ -473,7 +477,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -488,7 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessages App Icon ";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Challenge6 MessagesExtension/Info.plist";
@@ -499,7 +503,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -515,14 +519,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Challenge6/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 2;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -540,14 +544,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6FP5LT63NT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Challenge6/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 2;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.FireSide.Challenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

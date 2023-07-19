@@ -1,3 +1,4 @@
+
 //
 //  MessagesViewController.swift
 //  Challenge6 MessagesExtension
@@ -11,17 +12,21 @@ import Lottie
 import SwiftUI
 import AVKit
 
+
+
 class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     
     //this section for UI View components needed such
-    let sendButton = UIButton() //this button sends out the message
-    var receivedView: UIView!
-    var sendView : UIView!
+   private let sendButton = UIButton() //this button sends out the message
+   private var receivedView: UIView!
+   private var sendView : UIView!
     
     let firesideChats = FiresideChats() //this is our class// our prompts
+   static let messageBridge = MessageBridge()
    
     //singleton for the class to be shared for SwiftUI Views and functions
     static let shared = MessagesViewController()
+   // let messagesBridge = MessageBridge()
     
     //Published variables needed to update the SwiftUI Views
     @Published var swiftUIText = "FireChats"
@@ -31,6 +36,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     @Published var startedGame = false
     @Published var remainingCustomPrompts = 3
     @Published var isshowingPromptField = false
+    @Published var i = 0 //for demo
 
     var player: AVAudioPlayer?
     
@@ -39,6 +45,7 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
         case snow2
         case random
     }
+    
     
     func playSound(sound:SoundOption) {
         
@@ -54,18 +61,19 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     }
 
     //Cam section: for functions. put all functions here
-    @objc func randomFireSideChat() {
-        
-        let vm = MessagesViewController.shared
-
-        print("Random tapped")
-        if let firesideChat = firesideChats.fireChatPrompts.randomElement() {
-            vm.swiftUIText = firesideChat.topic
-            
-            startedGame = true
+        @objc func randomFireSideChat() {
     
+            let vm = MessagesViewController.shared
+    
+         
+    
+            if let firesideChat = firesideChats.fireChatPrompts.randomElement() {
+                vm.swiftUIText = firesideChat.topic
+    
+                startedGame = true
+    
+            }
         }
-    }
     
     func startFire() {
         didVote = false
@@ -108,8 +116,12 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     */
     
     @objc func sendMessage() {
+        
         let vmc = MessagesViewController.shared
         if vmc.startedGame == true {
+            
+            //button able to enter this function but cannot find active convervation
+            print("function start")
             
             let vm = MessagesViewController.shared
             //for some reason this resets when function is called
@@ -126,7 +138,8 @@ class MessagesViewController: MSMessagesAppViewController, ObservableObject {
             let layout = MSMessageTemplateLayout()
             let gameSubtitle = "Tap to vote"
             layout.subcaption = gameSubtitle
-            layout.image = .init(view: sendView)
+            //there some nil happening
+           // layout.image = .init(view: sendView)
             
             guard let conversation = activeConversation else {
                 fatalError("this error for guard statement to find active conversation")
@@ -429,6 +442,10 @@ extension UIImage {
         self.init(cgImage: image!.cgImage!)
     }
 }
+
+
+
+
 
 
 

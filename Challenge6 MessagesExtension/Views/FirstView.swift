@@ -12,35 +12,15 @@ import Messages
 struct FirstView: View {
     
     @ObservedObject var vm = MessagesViewController.shared
-   // var activeConversation: MSConversation?
     @State var appColors = AppColors()
+    @State var isShowingPurchasedView = false
    
-
-    
-//    func showPromptField() {
-//        vm.isshowingPromptField.toggle()
-//
-//        if vm.isshowingPromptField == true {
-//            vm.swiftUIText = "Please enter prompt"
-//            vm.remainingCustomPrompts -= 1
-//        }
-//    }
-    
-//    init() {
-//
-//        for familyName in UIFont.familyNames {
-//            print(familyName)
-//
-//            for fontName in UIFont.fontNames(forFamilyName: familyName) {
-//                print("--\(fontName)")
-//            }
-//        }
-//    }
-    
     var body: some View {
                 
         let gradient = Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)])
         
+        ZStack {
+            
             VStack {
                 
                 Rectangle()
@@ -60,19 +40,8 @@ struct FirstView: View {
                             
                             VStack {
                                 
-//                                Button {
-//                                    
-//                                    vm.sendMessage()
-//                                } label: {
-//                                    Image(systemName: "square.and.pencil")
-//                                       // .font(.system(size: 36))
-//                                        .font(.largeTitle)
-//                                        .foregroundColor(.white)
-//                                    
-//                                }
-//                                //.padding(.top, 30)
-//                                .offset(y: 20)
-                                
+                           
+        
                                 if vm.isshowingPromptField == true {
                                     
                                     TextField("Enter prompt", text: $vm.swiftUIText)
@@ -82,25 +51,23 @@ struct FirstView: View {
                                         .frame(width: 250)
                                         .foregroundColor(.black)
                                         .padding(.horizontal)
-
+                                    
                                     
                                 }
                                 
                                 if vm.isshowingPromptField == false {
                                     
                                     Text(self.vm.swiftUIText)
-                                      
+                                    
                                         .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                                         .minimumScaleFactor(0.2)
                                         .frame(height: 100)
                                         .foregroundColor(.black)
                                         .padding(.horizontal)
-                                  
-
+                                    
+                                    
                                 }
-                                
-                            
-                            
+                        
                                 Button {
                                     vm.randomFireSideChat()
                                     vm.playSound(sound: .random)
@@ -116,14 +83,25 @@ struct FirstView: View {
                                 .padding(.bottom, 30)
                                 
                             }
+                            .sheet(isPresented: $isShowingPurchasedView) {
+                                Text("code for store is here")
+                                    .presentationDragIndicator(.visible)
+                            }
                             
                         }
                     )
-               
             }
-        //VStack
             
-       // } // Geo reader
+//            Button {
+//                isShowingPurchasedView.toggle()
+//            } label: {
+//                Image(systemName: "lock.circle.fill")
+//                    .font(.largeTitle)
+//                    .foregroundColor(.black)
+//            }
+//            .padding(.bottom, 155)
+            
+        }//zstack ends here
         
     }
 }

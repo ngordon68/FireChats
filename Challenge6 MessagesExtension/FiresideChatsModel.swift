@@ -19,8 +19,20 @@ struct FiresideChatModel {
 //    var disagreeCount: Int
 }
 
+
+
 //Cam section for Classes
 class FiresideChats {
+    
+    let demoArray:[String] = [
+       "Dogs are better pets than cats" ,
+       "The Lion King is overrated",
+        "Apple juice is better than orange juice",
+         "Lebron James is better than Michael Jordan",
+            "Flats are better than drums"
+    
+    
+    ]
     
     let fireChatPrompts:[FiresideChatModel] = [
         
@@ -30,17 +42,19 @@ class FiresideChats {
         FiresideChatModel(topic: "The Lion King is overrated"),
         FiresideChatModel(topic: "Floyd Mayweather is the best boxer of all time"),
         FiresideChatModel(topic: "Buffalo sauce is better than BBQ sauce"),
-        FiresideChatModel(topic: "Flats are better than drums"),
+      
+        FiresideChatModel(topic: "Apple juice is better than orange juice"),
         FiresideChatModel(topic: "Cake is better than pie"),
         FiresideChatModel(topic: "Eastside is better than Westside"),
         FiresideChatModel(topic: "Anita Baker is better than Aretha Franklin"),
         FiresideChatModel(topic: "Lebron James is better than Michael Jordan"),
+        FiresideChatModel(topic: "Flats are better than drums"),
         FiresideChatModel(topic: "Brandy is better than Monica"),
         FiresideChatModel(topic: "Spartans are better than Wolverines"),
         FiresideChatModel(topic: "Mac is better than Windows"),
         FiresideChatModel(topic: "BMF is better than Power"),
         FiresideChatModel(topic: "DC is better than Marvel"),
-        FiresideChatModel(topic: "Apple juice is better than orange juice"),
+       
         FiresideChatModel(topic: "Hotdogs are sandwiches"),
         FiresideChatModel(topic: "Boneless wings are better than bone-in"),
         FiresideChatModel(topic: "Wendy's is better than McDonald's"),
@@ -55,7 +69,7 @@ class FiresideChats {
         FiresideChatModel(topic: "Hard shell tacos are better than soft shell"),
         FiresideChatModel(topic: "SnapChat is for cheaters"),
         FiresideChatModel(topic: "Twitter is better than Instagram"),
-        FiresideChatModel(topic: "Taylor Swift fans are overrated"),
+        FiresideChatModel(topic: "Taylor Swift fans are annoying"),
         FiresideChatModel(topic: "Detroit rappers are overrated"),
         FiresideChatModel(topic: "The GameCube is the best Nintendo console"),
         FiresideChatModel(topic: "Spotify is better than Apple Music"),
@@ -76,5 +90,18 @@ class FiresideChats {
         FiresideChatModel(topic: "Hats make people go bald"),
         FiresideChatModel(topic: "Team Jacob is better than team Edward")
         
+    ]
+    
+    let spicyPrompts:[FiresideChatModel]  = [
+    
+    FiresideChatModel(topic: "Starbucks is overrated")
+    
+    
+    
+    
+    
+    
+    
+    
     ]
 }

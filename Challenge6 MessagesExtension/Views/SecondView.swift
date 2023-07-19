@@ -30,6 +30,7 @@ struct SecondView: View {
             if vm.hotTapped == true {
                 LottieView(animationName: "Burning")
                    // .scaleEffect(0.85)
+                    .frame(width: UIScreen.main.bounds.size.width * 0.88)
                     .scaleEffect(0.90)
                     .offset(y: -110)
                 
