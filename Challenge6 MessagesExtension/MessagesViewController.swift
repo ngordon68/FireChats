@@ -17,6 +17,7 @@ import AVKit
 class MessagesViewController: MSMessagesAppViewController, ObservableObject {
     
     //this section for UI View components needed such
+    //test
    private let sendButton = UIButton() //this button sends out the message
    private var receivedView: UIView!
    private var sendView : UIView!

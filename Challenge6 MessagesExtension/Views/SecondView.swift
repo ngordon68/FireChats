@@ -19,7 +19,7 @@ struct SecondView: View {
         let gradient = vm.hotTapped ? Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)]) : Gradient(colors: [Color(appColors.lightBlue), Color(appColors.blue), Color(appColors.purple)])
         
         ZStack {
-        
+       
             if vm.coldTapped == true {
                 
                 LottieView(animationName: "SnowEffect")
