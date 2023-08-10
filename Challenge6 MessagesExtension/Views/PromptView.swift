@@ -9,15 +9,20 @@ import SwiftUI
 import Messages
 
 
-struct FirstView: View {
+struct PromptView: View {
+        
+    @ObservedObject var fireChat:FireChatsViewModel
+     var vm = MessagesViewController.shared
+  
     
-    @ObservedObject var vm = MessagesViewController.shared
-    @State var appColors = AppColors()
     @State var isShowingPurchasedView = false
+    
+    var conversation: MSConversation?
+   
    
     var body: some View {
                 
-        let gradient = Gradient(colors: [Color(appColors.yellow), Color(appColors.orange), Color(appColors.red), Color(appColors.pink)])
+        let gradient = Gradient(colors: [.fireChatsYellow, .fireChatsOrange, .fireChatsRed, .fireChatsPink])
         
         ZStack {
             
@@ -25,9 +30,7 @@ struct FirstView: View {
                 
                 Rectangle()
                     .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .frame(width: 300, height: 200)
-                    .cornerRadius(20)
-                    .shadow(color: .black, radius: 5, x: 0, y: 0)
+                    .withFireChatFormatting()
                     .overlay (
                         
                         ZStack {
@@ -39,12 +42,10 @@ struct FirstView: View {
                                 .opacity(0.2)
                             
                             VStack {
-                                
-                           
-        
-                                if vm.isshowingPromptField == true {
+  
+                                if fireChat.isshowingPromptField == true {
                                     
-                                    TextField("Enter prompt", text: $vm.swiftUIText)
+                                    TextField("Enter prompt", text: $fireChat.swiftUIText)
                                         .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                                         .minimumScaleFactor(0.2)
                                         .frame(height: 100)
@@ -55,10 +56,9 @@ struct FirstView: View {
                                     
                                 }
                                 
-                                if vm.isshowingPromptField == false {
+                                if fireChat.isshowingPromptField == false {
                                     
-                                    Text(self.vm.swiftUIText)
-                                    
+                                    Text(self.fireChat.swiftUIText)
                                         .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                                         .minimumScaleFactor(0.2)
                                         .frame(height: 100)
@@ -67,22 +67,37 @@ struct FirstView: View {
                                     
                                     
                                 }
-                        
-                                Button {
-                                    vm.randomFireSideChat()
-                                    vm.playSound(sound: .random)
+                                
+                                HStack {
+                                    Spacer()
+                                    Button {
+                                        fireChat.generateRandomPrompt()
+                                        fireChat.playSound(sound: .random)
+                                        
+                                    } label: {
+                                        Image(systemName: "arrow.clockwise.circle")
+                                            .foregroundColor(.black)
+                                            .font(.largeTitle)
+                                        
+                                    }
+                               
+                                    Spacer()
                                     
-                                } label: {
-                                    Image(systemName: "arrow.clockwise.circle")
-                                        .foregroundColor(.black)
-                                        .font(.largeTitle)
+                                    Button {
+                                        if let conversation = conversation {
+                                            vm.sendGame(conversation: conversation, prompt: fireChat.swiftUIText, startedGame: fireChat.startedGame)
+                                        }
+                                    } label: {
+                                        Image(systemName: "arrow.up.message.fill")
+                                            .foregroundColor(.black)
+                                            .font(.largeTitle)
+                                        
+                                    }
+                                  
+                                   Spacer()
+                                }
                                     
                                 }
-                                
-                                .padding(.trailing, 100)
-                                .padding(.bottom, 30)
-                                
-                            }
                             .sheet(isPresented: $isShowingPurchasedView) {
                                 Text("code for store is here")
                                     .presentationDragIndicator(.visible)
@@ -107,9 +122,3 @@ struct FirstView: View {
 }
 
 
-
-struct FirstView_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstView()
-    }
-}
