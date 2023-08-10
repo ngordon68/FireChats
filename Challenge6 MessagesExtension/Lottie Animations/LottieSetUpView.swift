@@ -7,6 +7,7 @@
 
 import Foundation
 import Lottie
+import UIKit
 import SwiftUI
 
 
@@ -40,3 +41,5 @@ struct LottieView: UIViewRepresentable {
         // Do nothing
     }
 }
+
+

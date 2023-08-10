@@ -7,19 +7,13 @@
 
 import Foundation
 import SwiftUI
-
-
-struct AppColors {
-    
-    var blue = "CustomBlue"
-    var lightBlue = "CustomLightBlue"
-    var purple = "CustomPurple"
-    
-    var orange = "CustomOrange"
-    var pink = "CustomPink"
-    var red = "CustomRed"
-    var yellow = "CustomYellow"
-    
-//    static let gradient = vm.hotTapped ? Gradient(colors: [Color(yellow), Color(orange), Color(red), Color(pink)]) : Gradient(colors: [Color(lightBlue), Color(blue), Color(purple)])
-    
+//make an extension
+extension Color {
+    static let fireChatsBlue = Color("CustomBlue")
+    static let fireChatsLightBlue = Color("CustomLightBlue")
+    static let fireChatsPurple = Color("CustomPurple")
+    static let fireChatsOrange = Color("CustomOrange")
+    static let fireChatsPink = Color("CustomPink")
+    static let fireChatsRed = Color("CustomRed")
+    static let fireChatsYellow = Color("CustomYellow")
 }
