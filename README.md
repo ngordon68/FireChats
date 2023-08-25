@@ -1,5 +1,8 @@
 # FireChats
-<img width="100" alt="Screen Shot 2023-02-15 at 8 14 27 AM" src="https://github.com/ngordon68/Challenge6/assets/102773701/a7e7b6bf-ce8b-45b7-83d7-3a1610ae1e5e.png">
+<img width="100" alt="Screen Shot 2023-02-15 at 8 14 27 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/299dbed9-0794-4c75-aa20-a87df14230a4">
+
+![FireChats](https://github.com/ngordon68/FireChats/assets/102773701/299dbed9-0794-4c75-aa20-a87df14230a4)
+
 
 
 
