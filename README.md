@@ -1,11 +1,6 @@
 # FireChats
 <img width="100" alt="Screen Shot 2023-02-15 at 8 14 27 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/299dbed9-0794-4c75-aa20-a87df14230a4">
 
-![FireChats](https://github.com/ngordon68/FireChats/assets/102773701/299dbed9-0794-4c75-aa20-a87df14230a4)
-
-
-
-
 # 01 OverView
 
 The idea is that you send a debatable topic to the chat and the members can tap to vote agree (🔥) or disagree (❄️).   
