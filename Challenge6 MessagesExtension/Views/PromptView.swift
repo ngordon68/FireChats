@@ -13,16 +13,17 @@ struct PromptView: View {
         
     @ObservedObject var fireChat:FireChatsViewModel
      var vm = MessagesViewController.shared
-  
-    
+
     @State var isShowingPurchasedView = false
     
     var conversation: MSConversation?
+    var parentViewController: MessagesViewController
    
    
     var body: some View {
-                
-        let gradient = Gradient(colors: [.fireChatsYellow, .fireChatsOrange, .fireChatsRed, .fireChatsPink])
+//
+//        let gradient = Gradient(colors: [.fireChatsYellow, .fireChatsOrange, .fireChatsRed, .fireChatsPink])
+        let gradient = Gradient(colors: [.fireChatsYellow, .fireChatsPurple])
         
         ZStack {
             
@@ -52,8 +53,6 @@ struct PromptView: View {
                                         .frame(width: 250)
                                         .foregroundColor(.black)
                                         .padding(.horizontal)
-                                    
-                                    
                                 }
                                 
                                 if fireChat.isshowingPromptField == false {
@@ -64,8 +63,7 @@ struct PromptView: View {
                                         .frame(height: 100)
                                         .foregroundColor(.black)
                                         .padding(.horizontal)
-                                    
-                                    
+            
                                 }
                                 
                                 HStack {
@@ -86,6 +84,7 @@ struct PromptView: View {
                                     Button {
                                         if let conversation = conversation {
                                             vm.sendGame(conversation: conversation, prompt: fireChat.swiftUIText, startedGame: fireChat.startedGame)
+                                           // parentViewController.dismiss()
                                         }
                                     } label: {
                                         Image(systemName: "arrow.up.message.fill")
@@ -98,6 +97,7 @@ struct PromptView: View {
                                 }
                                     
                                 }
+                           
                             .sheet(isPresented: $isShowingPurchasedView) {
                                 Text("code for store is here")
                                     .presentationDragIndicator(.visible)
@@ -106,6 +106,7 @@ struct PromptView: View {
                         }
                     )
             }
+          
             
 //            Button {
 //                isShowingPurchasedView.toggle()
