@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct FireChatModel {
     var id = UUID()
-    var topic:String
+    var topic: String
 }
 
 class FireChats {
@@ -22,14 +23,14 @@ class FireChats {
         FireChatModel(topic: "Buffalo sauce is better than BBQ sauce"),
         FireChatModel(topic: "Apple juice is better than orange juice"),
         FireChatModel(topic: "Cake is better than pie"),
-        FireChatModel(topic: "Eastside is better than Westside"),
-        FireChatModel(topic: "Anita Baker is better than Aretha Franklin"),
+        FireChatModel(topic: "Peanuts does not belong in chocolate"),
+        FireChatModel(topic: "Fall is the best season"),
         FireChatModel(topic: "Lebron James is better than Michael Jordan"),
         FireChatModel(topic: "Flats are better than drums"),
-        FireChatModel(topic: "Brandy is better than Monica"),
+        FireChatModel(topic: "4 day work weeks should be the norm"),
         FireChatModel(topic: "Spartans are better than Wolverines"),
         FireChatModel(topic: "Mac is better than Windows"),
-        FireChatModel(topic: "BMF is better than Power"),
+        FireChatModel(topic: "Online dating is overrated"),
         FireChatModel(topic: "DC is better than Marvel"),
         FireChatModel(topic: "Hotdogs are sandwiches"),
         FireChatModel(topic: "Boneless wings are better than bone-in"),
@@ -37,7 +38,7 @@ class FireChats {
         FireChatModel(topic: "Waffles are more popular than pancakes"),
         FireChatModel(topic: "Fall is the best season"),
         FireChatModel(topic: "Everyone should travel alone at least once in their life"),
-        FireChatModel(topic: "Pepsi is a better product than Coke"),
+        FireChatModel(topic: "AI will eventually take over the world"),
         FireChatModel(topic: "Xbox has better games than PlayStation"),
         FireChatModel(topic: "Pie is a better dessert than cake"),
         FireChatModel(topic: "Hot sandwiches are better than cold sandwiches"),
@@ -64,11 +65,13 @@ class FireChats {
         FireChatModel(topic: "Vernor's is better than Canadian Dry"),
         FireChatModel(topic: "Kendrick Lamar is the greatest rapper alive"),
         FireChatModel(topic: "Hats make people go bald"),
-        FireChatModel(topic: "Team Jacob is better than team Edward")
+        FireChatModel(topic: "Cereal is a soup")
         
     ]
     
     let spicyPrompts:[FireChatModel]  = [
-    FireChatModel(topic: "Starbucks is overrated")
+    FireChatModel(topic: "Starbucks is overrated"),
+    FireChatModel(topic: "Pumpkin spice is overrated"),
+    FireChatModel(topic: "")
     ]
 }

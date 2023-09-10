@@ -12,17 +12,16 @@ import Lottie
 import SwiftUI
 
 class GameState {
+    static let shared = GameState()
     var isShowingPromptView = true
 }
 
 class MessagesViewController: MSMessagesAppViewController {
     
     var conversation:MSConversation?
-    var votedConversation: MSConversation?
-    var isShowingPromptView = true
     var compactPresentationStyle: MSMessagesAppPresentationStyle = .compact
-  //  var voteHostingController: UIHostingController<VoteView>?
-  
+    var currentRenderedImage = Image("AppIcon")
+
     //TEST
     var fireChatsVM = FireChatsViewModel()
     static let shared = MessagesViewController()
@@ -30,62 +29,50 @@ class MessagesViewController: MSMessagesAppViewController {
     //sets up the view componets
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //This is for loading the SwiftUI View
  
+   
         
+      //  if GameState.shared.isShowingPromptView == true {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: { [self] in
+                self.conversation = self.activeConversation
+               // self.requestPresentationStyle(.expanded)
+                print(self.conversation?.description)
+                loadInitialView(conversation: conversation ?? MSConversation(), presentationStyle: .compact, parentViewController: MessagesViewController.shared)
+                
+                print("init is called")
 
-                      if MessagesViewController.shared.isShowingPromptView == true {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
-                                self.conversation = self.activeConversation
-                                self.requestPresentationStyle(.compact)
-                                print(self.conversation?.description)
-                                loadInitialView(conversation: conversation ?? MSConversation(), presentationStyle: compactPresentationStyle)
-                                print("InitialView INIT")
-                                print("\(presentationStyle.rawValue)")
-        
-                            })
-                       }
+
+            })
+       // }
 //
-                if MessagesViewController.shared.isShowingPromptView == false {
-                    if let conversation = self.activeConversation {
+//        if GameState.shared.isShowingPromptView == false {
+//            if let conversation = self.activeConversation {
+//
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5000), execute: { [self] in
+                    self.conversation = self.activeConversation
+                    self.requestPresentationStyle(.expanded)
+                    loadVotedView(conversation: conversation ?? MSConversation(), parentViewController: MessagesViewController.shared)
+                    print("loaded voted view INIT")
+                    //print(conversation.description)
 
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
-                            self.conversation = self.activeConversation
-                            self.requestPresentationStyle(.compact)
-                           loadVotedView(conversation: conversation)
-                            print("loaded voted view INIT")
-                            print(conversation.description)
-
-                        })
-
-                    }
-
-                        }
-                    
-        
+                })
+//
+//            }
+//
+//        }
       
-        
-    
-       
-        //
     }
-    
-
-    
+      
     func sendGame(conversation:MSConversation?, prompt: String, startedGame: Bool) {
-        print("function start")
-        print(conversation?.description)
-        
-        MessagesViewController.shared.isShowingPromptView = false
-        
+ 
+        GameState.shared.isShowingPromptView = false
+  
         if startedGame == true {
-            
-            
+   
             var urlComponents = URLComponents()
             var items = [URLQueryItem]()
             let item = URLQueryItem(name: "promptName", value: prompt)
-            let stateItem = URLQueryItem(name: "gameState", value: MessagesViewController.shared.isShowingPromptView.description)
+            let stateItem = URLQueryItem(name: "gameState", value: GameState.shared.isShowingPromptView.description)
             
             items.append(item)
             items.append(stateItem)
@@ -94,12 +81,16 @@ class MessagesViewController: MSMessagesAppViewController {
             let layout = MSMessageTemplateLayout()
             let gameSubtitle = "Tap to vote"
             layout.subcaption = gameSubtitle
-        
+            
             let renderer = ImageRenderer(content: SendOutView(prompt: prompt))
             
+            //renderer.scale = .greatestFiniteMagnitude
             if let uiImage = renderer.uiImage {
-                // use the rendered image somehow
-                layout.image = uiImage
+               
+
+                let scaledImage = UIImage(cgImage: uiImage.cgImage!, scale: 3.0, orientation: uiImage.imageOrientation)
+                layout.image = scaledImage
+                
             }
             
             guard let conversation = conversation else {
@@ -107,8 +98,13 @@ class MessagesViewController: MSMessagesAppViewController {
             }
             // Create a message with the layout and URL
             
-           // let message = conversation.selectedMessage?.session ?? MSMessage(session: MSSession())
+            // let message = conversation.selectedMessage?.session ?? MSMessage(session: MSSession())
             let message = MSMessage(session: MSSession())
+            
+            //layout.caption = "$\(conversation.localParticipantIdentifier.uuidString) sent a FireChat"
+            // layout.caption = "A fi"
+            print(layout.caption)
+            
             message.layout = layout
             message.summaryText = nil
             
@@ -118,22 +114,16 @@ class MessagesViewController: MSMessagesAppViewController {
             let sender = conversation.selectedMessage?.senderParticipantIdentifier
             
             //layout.caption = "$\(sender?.uuid) likes Sprinkles!"
-            
+           
             self.conversation = conversation
-            self.votedConversation = conversation
             conversation.insert(message)
-            print("conversation INSERTED")
-            
-            dismiss()
+    
         }
     }
     
-    func sendGameBack(conversation: MSConversation?, prompt:String) {
+    func sendGameBack(conversation: MSConversation?, prompt:String, isHotTapped:Bool) {
         
-        
-        
-        
-        print("sendGameBack inited")
+      //  var colorState = MessagesViewController()
         var urlComponents = URLComponents()
         var items = [URLQueryItem]()
         let item = URLQueryItem(name: "name", value: prompt)
@@ -142,16 +132,18 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // Create a message layout with the game content
         let layout = MSMessageTemplateLayout()
-        let gameSubtitle = "Tap to vote"
-        layout.subcaption = gameSubtitle
-        //there some nil happening
-        
-        let renderer = ImageRenderer(content: VotedImessageView(fireChat: fireChatsVM, prompt: prompt))
-        
+ 
+        let renderer = ImageRenderer(content: VotedImessageView(fireChat: MessagesViewController.shared.fireChatsVM, prompt: prompt, isHotTapped: isHotTapped))
+            
         if let uiImage = renderer.uiImage {
-            // use the rendered image somehow
-            layout.image = uiImage
-        }
+                // use the rendered image somehow
+          //  let scaledImage = UIImage(cgImage: uiImage.cgImage!, scale: 3.0, orientation: uiImage.imageOrientation)
+            let scaledImage = UIImage(cgImage: uiImage.cgImage!, scale: UIScreen.main.nativeScale, orientation: uiImage.imageOrientation)
+
+                layout.image = scaledImage
+            }
+       
+       
         
         guard let conversation = conversation else {
             fatalError("this error for guard statement to find active conversation")
@@ -166,145 +158,95 @@ class MessagesViewController: MSMessagesAppViewController {
         urlComponents.queryItems = items
         message.url = urlComponents.url
         
-       // let sender = conversation.selectedMessage?.senderParticipantIdentifier
-        
-        //layout.caption = "$\(sender?.uuid) likes Sprinkles!"
-        
-        //self.conversation = conversation
         print(conversation.description)
-        
         conversation.insert(message)
-        
 
-        MessagesViewController.shared.isShowingPromptView = true
-        
-       
-        self.dismiss()
-        
-        print("sendGameBack completed")
-        
+        MessagesViewController.shared.dismiss()
+
     }
-    
-    
+   
     //function when user taps on the card. downloads the url components to updated view
     
     func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
         
         print("insideViewControllerFunction")
+        print(GameState.shared.isShowingPromptView.description)
         
-        requestPresentationStyle(.compact)
-        
+        GameState.shared.isShowingPromptView = false
+      
         let message = conversation.selectedMessage
         guard let messageURL = message?.url else { return }
         guard let urlComponents = NSURLComponents(url: messageURL, resolvingAgainstBaseURL: false),
               let queryItems = urlComponents.queryItems else {return}
         
         
-        print("\(queryItems.description) is for when tapped open")
+        //print("\(queryItems.description) is for when tapped open")
         for item in queryItems {
             
             
             if item.name == "promptName" {
                 if let prompt = item.value {
                     fireChatsVM.swiftUIText = prompt
-                    print(prompt)
+                   
                 }
             }
             //do guard let for value later
             else if item.name == "gameState" {
                 guard let item = item.value else { return }
-                if let gameState = Bool(item) {
-                    print(gameState.description)
-                    MessagesViewController.shared.isShowingPromptView = gameState
+                if let currentGameState = Bool(item) {
+                    
+                    GameState.shared.isShowingPromptView  = currentGameState
+                    print(GameState.shared.isShowingPromptView.description)
+                  
                 
+                 
+                    
                 }
             }
         }
         
         
-        if MessagesViewController.shared.isShowingPromptView == false {
-            
-            //self.requestPresentationStyle(.compact)
-            
-            self.votedConversation = self.activeConversation
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
+
      
-                loadVotedView(conversation: self.activeConversation ?? MSConversation())
-                
-                print(votedConversation?.description)
-                print("VotedView inside presentviewcontroller")
-                print("\(presentationStyle.rawValue)")
-            })
-                 
-                }
-    }
-    //   }
-    
-    func loadInitialView(conversation:MSConversation, presentationStyle: MSMessagesAppPresentationStyle) {
+//        if GameState.shared.isShowingPromptView == true {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: { [self] in
+//                self.conversation = self.activeConversation
+//               // self.requestPresentationStyle(.expanded)
+//                print(self.conversation?.description)
+//                loadInitialView(conversation: conversation ?? MSConversation(), presentationStyle: .compact, parentViewController: MessagesViewController.shared)
+//
+//            })
+//        }
         
-        
-        let promptView = PromptView(fireChat: fireChatsVM, conversation: conversation)
-        
-        
-        // Create a new UIHostingController and set its rootView to the SwiftUI view
-        let hostingController = UIHostingController(rootView: promptView)
-     
-        
-        // Add the UIHostingController's view to the view hierarchy
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        
-        // Set the constraints for the UIHostingController's view to fill the parent view
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    }
-    
-    func loadVotedView(conversation: MSConversation) {
-        let secondView = VoteView(fireChat: fireChatsVM, conversation: conversation)
-        
-        // Create a new UIHostingController and set its rootView to the SwiftUI view
-        let hostingController = UIHostingController(rootView: secondView)
-        
+       // if GameState.shared.isShowingPromptView == false {
+            print("\(GameState.shared.isShowingPromptView.description) after loading state")
+            DispatchQueue.main.asyncAfter(deadline: .now() + .nanoseconds(5000), execute: { [self] in
   
+                loadVotedView(conversation: self.activeConversation ?? MSConversation(), parentViewController: MessagesViewController.shared)
+                
+                print("VotedView inside presentviewcontroller")
+                //print("\(presentationStyle.rawValue)")
+            })
+       // }
         
-        // Add the UIHostingController's view to the view hierarchy
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        
-        // Set the constraints for the UIHostingController's view to fill the parent view
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        
+         //  }
     }
+    
 
     // MARK: - Conversation Handling
     
     //Imessage app life cycle
     
     override func willBecomeActive(with conversation: MSConversation) {
-  
-        print("willBecomeActive is CALLED")
-       // self.requestPresentationStyle(.compact)
         
-        if MessagesViewController.shared.isShowingPromptView == false {
-            
-            presentViewController(for: conversation, with: .expanded)
-        }
+       print("willBecomeActive is CALLED")
+        //self.requestPresentationStyle(.expanded)
+        //print(GameState.shared.isShowingPromptView.description)
         
-        if MessagesViewController.shared.isShowingPromptView == true {
-            
-            loadInitialView(conversation: conversation, presentationStyle: .compact)
-        }
+
+        presentViewController(for: conversation, with: .expanded)
         
-  
+        
         // Called when the extension is about to move from the inactive to active state.
         // This will happen when the extension is about to present UI.
         
@@ -321,7 +263,10 @@ class MessagesViewController: MSMessagesAppViewController {
         // in case it is terminated later.
         
         print("did resign function called")
-        MessagesViewController.shared.isShowingPromptView = true
+        GameState.shared.isShowingPromptView = true
+        
+  
+        
     }
     
     override func didReceive(_ message: MSMessage, conversation: MSConversation) {
@@ -329,23 +274,16 @@ class MessagesViewController: MSMessagesAppViewController {
         // extension on a remote device.
         
         // Use this method to trigger UI updates in response to the message.
-        
-        // handleReceivedMessage(message)
-//        print("didReceive FUNCTION")
-//
-//        presentViewController(for: conversation, with: presentationStyle)
-//        //  loadVotedView()
-        
-       
-
-        
+             
     }
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         // Called when the user taps the send button.
         //self.conversation = conversation
-        print("did start sending function called")
-        MessagesViewController.shared.isShowingPromptView = false
+//        print("did start sending function called")
+//        MessagesViewController.shared.isShowingPromptView = false
+        
+        GameState.shared.isShowingPromptView = false
         
         
     }
@@ -354,6 +292,8 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called when the user deletes the message without sending it.
         
         // Use this to clean up state related to the deleted message.
+        print("cancel function was called")
+        GameState.shared.isShowingPromptView = true
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
@@ -362,33 +302,70 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // Use this method to prepare for the change in presentation style.
         print("WILL TRANSITION FUNC IS CALLED")
+      //  print(GameState.shared.isShowingPromptView.description)
+    
         
-        self.requestPresentationStyle(.compact)
+        
+        //  super.willTransition(to: presentationStyle)
+        
         guard let conversation = self.activeConversation else { fatalError("Expected an active conversation")}
-           
-           presentViewController(for: conversation, with: presentationStyle)
-       }
-       
 
-        
+        presentViewController(for: conversation, with: .expanded)
+    }
     
-    
+
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         super.didTransition(to: presentationStyle)
         // Called after the extension transitions to a new presentation style.
         
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
+    
+
+    func loadInitialView(conversation:MSConversation, presentationStyle: MSMessagesAppPresentationStyle, parentViewController: UIViewController) {
+        
+        
+        let promptView = PromptView(fireChat: fireChatsVM, conversation: conversation, parentViewController: self)
+        
+        
+        // Create a new UIHostingController and set its rootView to the SwiftUI view
+        let hostingController = UIHostingController(rootView: promptView)
+        
+        
+        // Add the UIHostingController's view to the view hierarchy
+       // addChild(hostingController)
+        view.addSubview(hostingController.view)
+        
+        // Set the constraints for the UIHostingController's view to fill the parent view
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
+    func loadVotedView(conversation: MSConversation, parentViewController: UIViewController) {
+
+        let secondView = VoteView(fireChat: fireChatsVM, conversation: conversation, parentViewController: self)
+        
+        // Create a new UIHostingController and set its rootView to the SwiftUI view
+        let hostingController = UIHostingController(rootView: secondView)
+        
+        // Add the UIHostingController's view to the view hierarchy
+       // addChild(hostingController)
+        view.addSubview(hostingController.view)
+        
+        //present(hostingController, animated: true, completion: nil)
+        
+        // Set the constraints for the UIHostingController's view to fill the parent view
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        hostingController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+    }
 }
-
-
-
-
-
-
-
-
-
 
 
 

@@ -14,9 +14,8 @@ struct SendOutView: View {
     
     var body: some View {
         
-        let gradient = Gradient(colors: [.fireChatsYellow, .fireChatsOrange, .fireChatsRed, .fireChatsPink])
-        
-    
+        let gradient = Gradient(colors: [.fireChatsYellow, .fireChatsPurple])
+
             Rectangle()
                 .withFireChatFormatting()
                 .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))

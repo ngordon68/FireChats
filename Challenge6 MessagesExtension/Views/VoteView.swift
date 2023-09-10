@@ -7,14 +7,21 @@
 
 import SwiftUI
 import Messages
+import Social
+import Messages
 
 
 struct VoteView: View {
     
  
-     var vm = MessagesViewController.shared
+    var vm = MessagesViewController.shared
     @ObservedObject var fireChat:FireChatsViewModel
     var conversation: MSConversation?
+    @State private var currentRenderedImage = Image("AppIcon")
+    
+    var parentViewController: MessagesViewController
+
+    
   
 
     var body: some View {
@@ -39,6 +46,8 @@ struct VoteView: View {
             
             
             VStack {
+                
+                
                 Rectangle()
                     .frame(width: 350, height: 300)
                     .cornerRadius(20)
@@ -49,7 +58,34 @@ struct VoteView: View {
                        CardComponents
 
                     )
-               ShareButton
+                
+
+                ShareLink(
+                    item: vm.currentRenderedImage,
+              
+                          preview: SharePreview("share ",
+                                                image: Image(systemName: "Circle")
+                                              ))
+
+                {
+
+                    Rectangle()
+                        .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .animation(Animation.easeIn(duration: 2), value: fireChat.coldTapped)
+                        .frame(width: 150)
+                        .frame(height: 50)
+                        .cornerRadius(20)
+                        .shadow(color: .black, radius: 5, x: 0, y: 0)
+                        .overlay (
+                   Text("SHARE")
+                        .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
+                        .foregroundColor(.black)
+                        .minimumScaleFactor(0.8)
+                   )
+                }
+
+                
+
                 
             }
             .offset(y: 150)
@@ -67,10 +103,14 @@ struct VoteView: View {
                 .opacity(0.2)
 
             VStack {
-                
-                Button {
+
+                Button() {
                     if let conversation = conversation {
-                        vm.sendGameBack(conversation: conversation, prompt: fireChat.swiftUIText)
+ 
+                        vm.sendGameBack(conversation: conversation, prompt: fireChat.swiftUIText, isHotTapped: fireChat.hotTapped)
+                        
+                        parentViewController.dismiss()
+
                 }
                 } label: {
                     Image(systemName: "arrow.up.message.fill")
@@ -83,7 +123,7 @@ struct VoteView: View {
                     .bold()
                     .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .minimumScaleFactor(0.2)
                     .frame(height: 100)
                     .padding(.horizontal)
@@ -94,6 +134,7 @@ struct VoteView: View {
                     Button {
                         fireChat.startFire()
                         fireChat.playSound(sound: .fire)
+                        renderView()
                     } label: {
                         Text("👍")
                             .foregroundColor(.black)
@@ -108,6 +149,7 @@ struct VoteView: View {
                     Button {
                         fireChat.startCold()
                         fireChat.playSound(sound: .snow2)
+                        renderView()
                     } label: {
      
                         Text("👎")
@@ -121,40 +163,27 @@ struct VoteView: View {
                     
                 }
                 .padding(.bottom, 10)
-                
-                
+            
             }
             
         }
     }
-    
-    var ShareButton: some View {
 
-        
-        ShareLink(
-                  item: URL(string: "https://apps.apple.com/us/app/firechats/id6449296459")!,
-                 // subject: Text("Check out this firechat! \(vm.swiftUIText), 😱"),
-                  message: Text("Check out this firechat! \(fireChat.swiftUIText), 😱"),
-                  preview: SharePreview("Check out this firechat! \(fireChat.swiftUIText), 😱",
-                                        image: Image("AppIcon")
-                                      )) {
+    func renderView() -> Image {
+        //let renderer = ImageRenderer(content: VotedImessageView(fireChat: vm.fireChatsVM, prompt: fireChat.swiftUIText))
+        let renderer = ImageRenderer(content: VotedImessageView(fireChat: vm.fireChatsVM, prompt: fireChat.swiftUIText, isHotTapped: fireChat.hotTapped))
+        // make sure and use the correct display scale for this device
+        renderer.scale = UIScreen.main.scale
 
-            Rectangle()
-                .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.fireChatsYellow, .fireChatsOrange, .fireChatsRed, .fireChatsPink]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                .animation(Animation.easeIn(duration: 2), value: fireChat.coldTapped)
-                .frame(width: 150)
-                .frame(height: 50)
-                .cornerRadius(20)
-                .shadow(color: .black, radius: 5, x: 0, y: 0)
-                .overlay (
-           Text("SHARE")
-                .font(.custom("GrandeuxSerifPERSONALUSE-Regular", size: 20))
-                .foregroundColor(.white)
-           )
+        if let uiImage = renderer.uiImage {
+            vm.currentRenderedImage = Image(uiImage: uiImage)
         }
         
+        return vm.currentRenderedImage
     }
     
 }
+
+
 
 
