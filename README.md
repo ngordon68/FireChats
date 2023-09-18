@@ -7,7 +7,10 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 
 
 ## 
-<img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/bcec6974-955e-432a-a065-881cfe5fb9cd">
+
+
+
+<img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/0f6605af-6ca4-47ed-82db-71decb73136f">
 <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/b6a7f061-8e01-4c70-a5ca-a0328382f26b)">
 <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/4af1743f-9ce7-4d72-aba2-2e6520e2b30d">
 <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/d9a9a010-4842-42bc-9013-d9efbba2c560">
