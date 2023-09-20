@@ -51,13 +51,15 @@ Messages, AVKit, LottieFiles, UIKit
  <table>
  <tr>
 
-
   <td>
  <img width="224" alt="week2" src="https://github.com/ngordon68/FireChats/assets/102773701/72b799b4-2107-421f-9636-ed5c05d58123">
 
    <td>
    
  <img width="224" alt="week2" src="https://github.com/ngordon68/FireChats/assets/102773701/59214594-305e-4da3-b434-fc97c4902def">
+
+   <tr>
+   <table>  
 
   <td>
   
@@ -67,8 +69,7 @@ Messages, AVKit, LottieFiles, UIKit
     
   <img width="224" alt="week3" src="https://github.com/ngordon68/FireChats/assets/102773701/28123804-405f-4e77-a97f-2652ae708e72">
 
-  <tr>
-   <table>  
+
    
 # 05 Technical Walkthrough
     
