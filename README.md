@@ -16,8 +16,10 @@ The idea is that you send a debatable topic to the chat and the members can tap 
 <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/5911aa6c-6d02-4b3a-8b29-7441dcd27187">
 
 <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/b1210a2d-b2a9-4eca-a47b-cb10778030c4">
-<tr>
+
 <img width="300px; height: 500px;" alt="Screen Shot 2023-02-16 at 11 50 11 AM" src="https://github.com/ngordon68/FireChats/assets/102773701/bbe08a99-bed4-4da5-8117-eb999db88d1f">
+
+<tr>
 
 
 <table>
